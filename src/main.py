@@ -12,7 +12,8 @@ console = Console()
 action = ""
 commands = {
     "add habit": habits.addhabit,
-    "log habit": habits.loghabit
+    "log habit": habits.loghabit,
+    "log previous habit": habits.logprevhabit
 }
 
 def draw_dash():
@@ -33,9 +34,9 @@ while(action != "exit"):
     action = input("Enter action (help for list of commands): ")
     try:
         commands[action.lower()]()
-    except:
+    except Exception as e:
         if action != "exit":
-            print("Invalid")
+            print(f"Error: {e}")
         else:
             print("Goodbye!")
     time.sleep(0.5)

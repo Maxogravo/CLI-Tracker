@@ -14,3 +14,14 @@ def loghabit():
     name = input("Enter habit to log: ")
     habits[name] += [current_time.day]
     print("logged")
+
+def logprevhabit():
+    name = input("Enter habit to log: ")
+    if name in habits:
+        datelist = input("Enter Dates To Log: ")
+        dates = datelist.split()
+        for x in dates:
+            habits[name].append(int(x))
+        print("Logged")
+    else:
+        print("Invalid Habit")
