@@ -13,7 +13,6 @@ def loghabit():
     name = input("Enter habit to log: ")
     habits[name] += [current_time.day]
     print("logged")
-    db.update_current()
 
 def logprevhabit():
     name = input("Enter habit to log: ")
